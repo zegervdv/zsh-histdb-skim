@@ -8,6 +8,8 @@ edition = "2021"
 [dependencies]
 skim = "0.9.4"
 rusqlite = "0.27.0"
+# Workaround for musl builds, see: https://github.com/rusqlite/rusqlite/issues/914
+libsqlite3-sys = { version = "*", features = ["bundled"] }
 tuikit = "0.4.5"
 chrono = "0.4.19"
 enum-map = "2.1.0"
