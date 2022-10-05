@@ -50,3 +50,7 @@ pub fn get_nosort_option() -> bool {
     }
     return false
 }
+
+pub fn get_window_height_option() -> String {
+    return env::var("HISTDB_HEIGHT").unwrap_or(String::from("100%"));
+}

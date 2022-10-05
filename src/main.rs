@@ -83,9 +83,10 @@ fn show_history(thequery: String) -> Result<String, String> {
     let mut query = thequery;
     loop {
         let title = generate_title(&location);
+        let height = get_window_height_option();
 
         let options = SkimOptionsBuilder::default()
-            .height(Some("100%"))
+            .height(Some(&height))
             .multi(false)
             .reverse(true)
             .prompt(Some("history >>"))
